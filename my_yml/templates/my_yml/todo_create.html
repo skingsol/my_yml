@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}
+  <title>ToDo 생성</title>
+{% endblock title %}
+{% block contents %}
+  <div class="row mb-3">
+    <h1>ToDo작성</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <!-- 비어있는 폼 화면에 보여주기 : 디자인을 따로 적용해야함 -->
+      {% comment %} {{form.as_p}} {% endcomment %}
+    {% include 'todo/errors.html' %}
+      <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="title" class="form-label">title</label>
+          <input type="text" class="form-control" id="title" name="title"/>
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">description</label>
+          <textarea type="text" class="form-control" id="description" name="description" rows="10"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="important" class="form-label">important</label>
+            <input type="checkbox" class="form-class-input" id="important" name="important" rows="10"></input>
+          </div>
+        <button type="submit" class="btn btn-primary">등록</button>
+      </form>
+    </div>
+  </div>
+{% endblock contents %}

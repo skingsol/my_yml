@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BillboardTrack - 전체보기</title>
+    <style>
+      body {
+        background: linear-gradient(to bottom, #CCF0FF, #42A5F5);
+      }
+
+      .content {
+        max-width: 960px;
+        margin: 0 10%;
+        padding: 1rem 10%;
+      }
+
+      .end_title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .add-button {
+        background-color: #1e96fc;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-bottom: 1rem;
+      }
+
+      .add-button:hover {
+        background-color: #0e7ae6;
+      }
+
+      .section_title_wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+      }
+
+      .section_title {
+        display: inline-flex;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      .link_more {
+        color: #1e96fc;
+        font-size: 1rem;
+        text-decoration: none;
+      }
+
+      .chart_center {
+        padding: 5%;
+      }
+
+      .chart_container {
+        display: flex;
+        gap: 20px;
+        justify-content: flex-start;
+        margin: 25px auto;
+        padding: 0 5%;
+      }
+
+      .chart_row {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .chart_item {
+        display: flex;
+        align-items: center;
+        background-color: #ffffff;
+        border-radius: 5px;
+        padding: 1rem 5%;
+        margin: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        min-width: 600px;
+      }
+
+      .song_cover {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 5px;
+        margin-right: 1rem;
+      }
+
+      .song_rank {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #1e96fc;
+        margin-right: 1rem;
+      }
+
+      .song_info {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .song_info > span {
+        font-size: 1rem;
+        font-weight: bold;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .song_info > span:last-child {
+        font-weight: normal;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="content">
+      <h2 class="end_title">BillboardTrack Top 100</h2>
+      <div class="block">
+        <div style="position: relative;">
+          <div class="end_section">
+            <div class="section_title_wrap">
+              <div class="select_items"></div>
+              <a href="/chart" class="link_more">< 돌아가기</a>
+            </div>
+            <span>항목선택</span>
+            <button class="add-button">Add+ My YML</button>
+            <div class="chart_container">
+              <div class="chart_row">
+                <!-- 1~100위 차트 데이터는 이 곳에 배치됩니다. -->
+                <!-- 1위 곡 정보 -->
+                <div class="chart_item">
+                  <img src="../../../static/img/test1.png" alt="곡 제목" class="song_cover">
+                  <span class="song_rank">1</span>
+                  <div class="song_info">
+                    <span class="song_title">곡 제목</span>
+                    <span class="song_artist">가수</span>
+                  </div>
+                </div>
+                <!-- -->
+                <!-- -->
+
+                <!-- 2위 곡 정보 -->
+                <div class="chart_item">
+                  <img src="../../../static/img/test1.png" alt="곡 제목" class="song_cover">
+                  <span class="song_rank">2</span>
+                  <div class="song_info">
+                    <span class="song_title">곡 제목</span>
+                    <span class="song_artist">가수</span>
+                  </div>
+                </div>
+                <!-- -->
+
+                <!-- 3위 곡 정보 -->
+                <div class="chart_item">
+                  <img src="../../../static/img/test1.png" alt="곡 제목" class="song_cover">
+                  <span class="song_rank">3</span>
+                  <div class="song_info">
+                    <span class="song_title">곡 제목</span>
+                    <span class="song_artist">가수</span>
+                  </div>
+                </div>
+                <!-- -->
+
+                <!-- 4위 곡 정보 -->
+                <div class="chart_item">
+                  <img src="../../../static/img/test1.png" alt="곡 제목" class="song_cover">
+                  <span class="song_rank">4</span>
+                  <div class="song_info">
+                    <span class="song_title">곡 제목</span>
+                    <span class="song_artist">가수</span>
+                  </div>
+                </div>
+                <!-- -->
+
+                <!-- 5위 곡 정보 -->
+                <div class="chart_item">
+                  <img src="../../../static/img/test1.png" alt="곡 제목" class="song_cover">
+                  <span class="song_rank">5</span>
+                  <div class="song_info">
+                    <span class="song_title">곡 제목</span>
+                    <span class="song_artist">가수</span>
+                  </div>
+                </div>
+                <!-- -->
+                <!-- 나머지 차트 데이터를 이와 비슷한 형식으로 넣어주세요 -->
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
