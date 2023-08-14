@@ -1,162 +1,53 @@
-<!DOCTYPE html>
-<html lang="ko">
-
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>오늘 Top 100 - 전체보기</title>
-    <style>
-      body {
-        background: linear-gradient(to bottom, #CCF0FF, #42A5F5);
-      }
-
-      .content {
-        max-width: 960px;
-        margin: 0 10%;
-        padding: 1rem 10%;
-      }
-
-      .end_title {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-      }
-
-      .add-button {
-        background-color: #1e96fc;
-        color: #ffffff;
-        border: none;
-        border-radius: 5px;
-        padding: 0.5rem 1rem;
-        font-size: 1rem;
-        cursor: pointer;
-        margin-bottom: 1rem;
-      }
-
-      .add-button:hover {
-        background-color: #0e7ae6;
-      }
-
-      .section_title_wrap {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 1rem;
-      }
-
-      .section_title {
-        display: inline-flex;
-        align-items: center;
-        font-size: 1.5rem;
-        font-weight: bold;
-      }
-
-      .link_more {
-        color: #1e96fc;
-        font-size: 1rem;
-        text-decoration: none;
-      }
-
-      .chart_center {
-        padding: 5%;
-      }
-
-      .chart_container {
-        display: flex;
-        gap: 20px;
-        justify-content: flex-start;
-        margin: 25px auto;
-        padding: 0 5%;
-      }
-
-      .chart_row {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      .chart_item {
-        display: flex;
-        align-items: center;
-        background-color: #ffffff;
-        border-radius: 5px;
-        padding: 1rem 5%;
-        margin: 10px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-        min-width: 600px;
-      }
-
-      .song_cover {
-        width: 60px;
-        height: 60px;
-        object-fit: cover;
-        object-position: center;
-        border-radius: 5px;
-        margin-right: 1rem;
-      }
-
-      .song_rank {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #1e96fc;
-        margin-right: 1rem;
-      }
-
-      .song_info {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        max-width: calc(100% - 100px);
-      }
-
-      .song_title {
-        font-size: 1rem;
-        font-weight: bold;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-      }
-
-      .song_info > span:last-child {
-        font-weight: normal;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="content">
-      <h2 class="end_title">오늘 Top 100</h2>
-      <div class="block">
-        <div style="position: relative;">
-          <div class="end_section">
-            <div class="section_title_wrap">
-              <div class="select_items"></div>
-              <a href="/chart" class="link_more">< 돌아가기</a>
-            </div>
-            <span>항목선택</span>
-            <button class="add-button">Add+ My YML</button>
-            <div class="chart_container">
-              <div class="chart_row">
-                <!-- 1~100위 차트 데이터 -->
-                <!-- 1위 곡 정보 -->
-                {% for song in chart_list1 %}
-                  <div class="chart_item">
-                    <img src="{{ song.album_image }}" alt="{{ song.title }}" class="song_cover">
-                    <span class="song_rank">{{ song.rank }}</span>
-                    <div class="song_info">
-                      <span class="song_title">{{ song.title }}</span>
-                      <span class="song_artist">{{ song.artist }}</span>
-                    </div>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  <title>오늘 Top 100 - 전체보기</title>
+{% endblock title %}
+{% block contents %}
+  <div class="content">
+    <h2 class="end_title">오늘 Top 100</h2>
+    <div class="block">
+      <div style="position: relative;">
+        <div class="end_section">
+          <div class="section_title_wrap">
+            <div class="select_items"></div>
+            <a href="/chart" class="link_more">< 돌아가기</a>
+          </div>
+          <select id="select_songs" onchange="handlePerPageChange(this)">
+            <option value="10">10 곡</option>
+            <option value="20">20 곡</option>
+            <option value="30">30 곡</option>
+            <option value="40">40 곡</option>
+            <option value="50">50 곡</option>
+            <option value="60">60 곡</option>
+            <option value="70">70 곡</option>
+            <option value="80">80 곡</option>
+            <option value="90">90 곡</option>
+            <option value="100">100 곡(전체)</option>
+          </select>
+          <button class="add-button">Add+ My YML</button>
+          <div class="chart_container">
+            <div class="chart_row">
+              <!-- 1~100위 차트 데이터 -->
+              <!-- 1위 곡 정보 -->
+              {% for song in chart_list1 %}
+                <div class="chart_item">
+                  <img src="{{ song.album_image }}" alt="{{ song.title }}" class="song_cover">
+                  <span class="song_rank">{{ song.rank }}</span>
+                  <div class="song_info">
+                    <span class="song_title">{{ song.title }}</span>
+                    <span class="song_artist">{{ song.artist }}</span>
                   </div>
-                {% endfor %}
-                <!-- -->
+                </div>
+              {% endfor %}
+              <!-- -->
 
-              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</body>
+</div>
 
-</html>
+{% endblock contents %}

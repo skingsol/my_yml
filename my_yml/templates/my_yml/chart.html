@@ -134,7 +134,18 @@
               </div>
               <a href="/chart/today_total" class="link_more">더 보기 ></a>
             </div>
-            <span>항목선택</span>
+            <select id="select_songs" onchange="handlePerPageChange(this)">
+              <option value="10">10 곡</option>
+              <option value="20">20 곡</option>
+              <option value="30">30 곡</option>
+              <option value="40">40 곡</option>
+              <option value="50">50 곡</option>
+              <option value="60">60 곡</option>
+              <option value="70">70 곡</option>
+              <option value="80">80 곡</option>
+              <option value="90">90 곡</option>
+              <option value="100">100 곡(전체)</option>
+            </select>
             <button class="add-button">Add+ My YML</button>
             <div class="chart_container">
               <div class="chart_row">

@@ -6,16 +6,12 @@ from .models import Chart
 from .crawling import get_chart
 
 
-# from .models import My_yml
-# from .forms import My_yml
-
-
 def chart(request):
     # 기존 DB의 차트 데이터 제거하기
-    Chart.objects.all().delete()
+    # Chart.objects.all().delete()
 
     # 새로운 차트 가져오기
-    chart_list = get_chart()
+    # chart_list = get_chart()
 
     # 차트 10개만 메인에 보여주기
     top_5_chart = Chart.objects.all()[:5]
