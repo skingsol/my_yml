@@ -105,13 +105,15 @@
         display: flex;
         flex-direction: column;
         width: 100%;
+        max-width: calc(100% - 100px);
       }
 
-      .song_info > span {
+      .song_title {
         font-size: 1rem;
         font-weight: bold;
         white-space: nowrap;
         text-overflow: ellipsis;
+        overflow: hidden;
       }
 
       .song_info > span:last-child {
@@ -134,63 +136,19 @@
             <button class="add-button">Add+ My YML</button>
             <div class="chart_container">
               <div class="chart_row">
-                <!-- 1~100위 차트 데이터는 이 곳에 배치됩니다. -->
+                <!-- 1~100위 차트 데이터 -->
                 <!-- 1위 곡 정보 -->
-                <div class="chart_item">
-                  <img src="../../../static/img/test1.png" alt="곡 제목" class="song_cover">
-                  <span class="song_rank">1</span>
-                  <div class="song_info">
-                    <span class="song_title">곡 제목</span>
-                    <span class="song_artist">가수</span>
+                {% for song in chart_list1 %}
+                  <div class="chart_item">
+                    <img src="{{ song.album_image }}" alt="{{ song.title }}" class="song_cover">
+                    <span class="song_rank">{{ song.rank }}</span>
+                    <div class="song_info">
+                      <span class="song_title">{{ song.title }}</span>
+                      <span class="song_artist">{{ song.artist }}</span>
+                    </div>
                   </div>
-                </div>
+                {% endfor %}
                 <!-- -->
-                <!-- -->
-
-                <!-- 2위 곡 정보 -->
-                <div class="chart_item">
-                  <img src="../../../static/img/test1.png" alt="곡 제목" class="song_cover">
-                  <span class="song_rank">2</span>
-                  <div class="song_info">
-                    <span class="song_title">곡 제목</span>
-                    <span class="song_artist">가수</span>
-                  </div>
-                </div>
-                <!-- -->
-
-                <!-- 3위 곡 정보 -->
-                <div class="chart_item">
-                  <img src="../../../static/img/test1.png" alt="곡 제목" class="song_cover">
-                  <span class="song_rank">3</span>
-                  <div class="song_info">
-                    <span class="song_title">곡 제목</span>
-                    <span class="song_artist">가수</span>
-                  </div>
-                </div>
-                <!-- -->
-
-                <!-- 4위 곡 정보 -->
-                <div class="chart_item">
-                  <img src="../../../static/img/test1.png" alt="곡 제목" class="song_cover">
-                  <span class="song_rank">4</span>
-                  <div class="song_info">
-                    <span class="song_title">곡 제목</span>
-                    <span class="song_artist">가수</span>
-                  </div>
-                </div>
-                <!-- -->
-
-                <!-- 5위 곡 정보 -->
-                <div class="chart_item">
-                  <img src="../../../static/img/test1.png" alt="곡 제목" class="song_cover">
-                  <span class="song_rank">5</span>
-                  <div class="song_info">
-                    <span class="song_title">곡 제목</span>
-                    <span class="song_artist">가수</span>
-                  </div>
-                </div>
-                <!-- -->
-                <!-- 나머지 차트 데이터를 이와 비슷한 형식으로 넣어주세요 -->
 
               </div>
             </div>
