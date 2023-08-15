@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  <title>J-POP Top100 - 전체보기</title>
+{% endblock title %}
+{% block contents %}
+  <div class="content">
+    <h2 class="end_title">J-POP Top100</h2>
+    <div class="block">
+      <div style="position: relative;">
+        <div class="end_section">
+          <div class="section_title_wrap">
+            <div class="select_items"></div>
+            <a href="/chart" class="link_more">< 돌아가기</a>
+          </div>
+          {% comment %} <select id="select_songs" onchange="handlePerPageChange(this)">
+            <option value="10">10 곡</option>
+            <option value="20">20 곡</option>
+            <option value="30">30 곡</option>
+            <option value="40">40 곡</option>
+            <option value="50">50 곡</option>
+            <option value="60">60 곡</option>
+            <option value="70">70 곡</option>
+            <option value="80">80 곡</option>
+            <option value="90">90 곡</option>
+            <option value="100">100 곡(전체)</option>
+          </select> {% endcomment %}
+          <button class="add-button">Add+ My YML</button>
+          <div class="chart_container">
+            <div class="chart_row">
+              <!-- 1~100위 차트 데이터 -->
+              <!-- 1위 곡 정보 -->
+              {% for song3 in jpop_chart_list1 %}
+                <div class="chart_item">
+                  <img src="{{ song3.album_image }}" alt="{{ song3.title }}" class="song_cover">
+                  <span class="song_rank">{{ song3.rank }}</span>
+                  <div class="song_info">
+                    <span class="song_title">{{ song3.title }}</span>
+                    <span class="song_artist">{{ song3.artist }}</span>
+                  </div>
+                </div>
+              {% endfor %}
+              <!-- -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock contents %}

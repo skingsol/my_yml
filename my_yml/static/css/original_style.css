@@ -8,6 +8,10 @@ body {
   padding: 1rem 10%;
 }
 
+.blank {
+  padding: 50px;
+}
+
 .end_title {
   font-size: 2rem;
   margin-bottom: 2rem;
@@ -49,21 +53,21 @@ body {
 }
 
 .chart_center {
-  padding: 5%;
+  padding: 30px;
 }
 
 .chart_container {
   display: flex;
-  gap: 20px;
-  justify-content: flex-start;
-  margin: 25px auto;
-  padding: 0 5%;
+  gap: 30px;
+  justify-content: center;
+  margin: 25px 10%;
+  padding: 0 20%;
 }
 
 .chart_row {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
 }
 
 .chart_item {
@@ -71,12 +75,22 @@ body {
   align-items: center;
   background-color: #ffffff;
   border-radius: 5px;
-  padding: 1rem 5%;
-  margin: 10px;
+  padding: 1rem 10%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  min-width: 600px;
+  min-width: 300px;
 }
 
+.song_cover {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
+  margin-right: 1rem;
+}
+
+.song2_cover,
+.song3_cover,
 .song_cover {
   width: 60px;
   height: 60px;
