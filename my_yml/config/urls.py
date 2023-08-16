@@ -16,5 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from my_yml.views import chart
 
-urlpatterns = [path("admin/", admin.site.urls), path("chart/", include("my_yml.urls"))]
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("chart/", include("my_yml.urls")),
+    path("", chart),
+]

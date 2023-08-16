@@ -87,7 +87,7 @@
               <div class="section_title">
                 <span>Billboard Chart Top100</span>
               </div>
-              <a href="/chart/billboard_total" class="link_more">더 보기 ></a>
+              <a href="{% url 'billboard_total' %}" class="link_more">더 보기 ></a>
             </div>
             {% comment %} <select id="select_songs" onchange="handlePerPageChange(this)">
               <option value="10">10 곡</option>
@@ -153,7 +153,7 @@
               <div class="section_title">
                 <span>J-POP Top100</span>
               </div>
-              <a href="/chart/jpop_total" class="link_more">더 보기 ></a>
+              <a href="{% url 'jpop_total' %}" class="link_more">더 보기 ></a>
             </div>
             {% comment %} <select id="select_songs" onchange="handlePerPageChange(this)">
               <option value="10">10 곡</option>
